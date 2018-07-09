@@ -110,8 +110,6 @@ else
   $result = sendEmail($_POST['email'], 'Спасибо за ваше пожертвование', 'payment/thanks-single');
 }
 
-var_dump($result);
- 
 CEvent::Send("NEW_DONATION", 's1', $arEventFields);
 
 ?>
