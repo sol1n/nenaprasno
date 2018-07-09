@@ -1,0 +1,195 @@
+.main-header {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #fff;
+
+  & > .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 48em) {
+    padding-top: 20px;
+  }
+}
+
+.header-fixed {
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.35);
+
+    @media (min-width: 48em) {
+      position: relative;
+      box-shadow: none;
+    }
+  }
+}
+
+.main-header-logo {
+  display: none;
+  padding-right: 20px;
+
+  @media (min-width: 48em) {
+    display: block;
+  }
+
+  img {
+    max-width: 250px;
+  }
+}
+
+.main-header-logo-mobile {
+  @media (min-width: 48em) {
+    display: none;
+  }
+}
+
+.main-header-menu {
+  .ul-reset;
+  display: none;
+  padding-right: 10px;
+
+  @media (min-width: 48em) {
+    display: block;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      color: @c-text;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 3px 5px;
+
+      &:hover,
+      &:focus {
+        color: @c-orange;
+      }
+    }
+
+    &.active {
+      a {
+        color: @c-orange;
+      }
+    }
+  }
+}
+
+.main-header-toggler {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+
+  &:hover,
+  &:focus,
+  &.active {
+    svg {
+      fill: @c-orange;
+    }
+  }
+
+  @media (min-width: 48em) {
+    display: none;
+  }
+}
+
+.main-header-search {
+
+}
+
+.main-header-search-toggle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  svg {
+    max-width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      * {
+        fill: @c-orange;
+      }
+    }
+  }
+}
+
+.main-header-user-toggle {
+  svg {
+    max-width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      * {
+        stroke: @c-orange;
+      }
+    }
+  }
+}
+
+.main-header-userarea {
+  display: none;
+  padding-left: 20px;
+
+  @media (min-width: 48em) {
+    display: block;
+  }
+}
+
+.main-header-right {
+  display: none;
+  align-items: center;
+
+  @media (min-width: 48em) {
+    display: flex;
+  }
+}
+
+.main-header-right-mobile {
+  white-space: nowrap;
+  vertical-align: middle;
+
+  a {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: 48em) {
+    display: none;
+  }
+}
+
+.main-header-userarea-links {
+  a {
+    display: inline-block;
+    color: @c-text;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover,
+    &:focus {
+      color: @c-orange;
+    }
+  }
+}

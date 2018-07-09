@@ -1,0 +1,235 @@
+.homepage-welcome {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  & > .wrapper {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -70px;
+      width: 380px;
+      height: 408px;
+      background: url('../images/homepage-doctors.svg') no-repeat center;
+      background-size: cover;
+
+      @media (max-width: 1170px) {
+        display: none;
+      }
+    }
+
+    & > .wrapper-small {
+      margin-left: 0;
+    }
+  }
+
+  @media all and (max-width: 980px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.homepage-welcome-title {
+  position: relative;
+  z-index: 1;
+  font-size: 30px;
+  line-height: 1.33;
+  color: #222;
+  margin-bottom: 50px;
+
+  @media all and (max-width: 980px) {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  @media all and (max-width: 600px) {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}
+
+.homepage-welcome-description {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.homepage-welcome-description-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.homepage-welcome-buttons {
+  margin-top: 30px;
+
+  .button {
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    @media (max-width: 770px) {
+      display: inline-block;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+}
+
+.homepage-grants {
+
+}
+
+.homepage-grants-title {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.33;
+  text-align: center;
+  color: #222222;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.homepage-grants-item {
+  flex: 1 1 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.homepage-grants-item-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #f4f4f4;
+  margin: 0 auto 20px;
+  color: #666666;
+}
+
+.homepage-about-hso {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.homepage-about-hso-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.homepage-about-hso-notice {
+  padding: 30px;
+  border: 3px solid @c-orange;
+  margin-top: 30px;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: center;
+
+  @media (max-width: 980px) {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+.homepage-hso-is {
+
+}
+
+.homepage-hso-is-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.homepage-hso-is-item {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 30px;
+
+  @media (max-width: 720px) {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+}
+
+.homepage-hso-is-item-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  background-color: #fff;
+  color: @c-orange;
+  font-size: 20px;
+  margin: 0 auto 10px;
+
+  @media (max-width: 720px) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.homepage-additional-program {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.homepage-additional-program-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  max-width: 770px;
+
+  @media (max-width: 720px) {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+}
+
+.homepage-about-fund {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.homepage-about-fund-title {
+  font-size: 30px;
+  line-height: 1.33;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  @media (max-width: 720px) {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+}
+
+.homepage-about-fund-desc {
+  flex: 0 1 770px;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.homepage-about-fund-logo {
+  float: left;
+  padding-left: 1em;
+  padding-right: 1em;
+}

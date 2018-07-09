@@ -1,0 +1,131 @@
+.main-offcanvas-overlay {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  transition: opacity 300ms, left 100ms 300ms;
+  cursor: pointer;
+
+  &.active {
+    left: 0;
+    opacity: 1;
+    transition: opacity 300ms;
+
+    .main-offcanvas {
+      left: 0;
+      transform: translateX(0px);
+      opacity: 1;
+      transition: all 300ms;
+    }
+  }
+}
+
+.main-offcanvas {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  overflow-y: auto;
+  left: -300px;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.16);
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.main-offcanvas-padding {
+  padding: 0 15px;
+}
+
+.main-offcanvas-logo {
+  text-align: center;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 8px;
+
+  img {
+    height: 42px;
+  }
+}
+
+.main-offcanvas-menu {
+  .ul-reset;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e4e4e4;
+
+  & > li {
+    & > a {
+      display: block;
+      color: #222222;
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+
+      &:hover,
+      &:focus {
+        color: @c-blue;
+      }
+    }
+
+    &.active {
+      & > a {
+        color: @c-blue;
+      }
+    }
+
+    & > ul {
+      .ul-reset;
+
+      & > li {
+        & > a {
+          color: #222;
+          display: block;
+          padding: 10px 15px;
+
+          &:hover,
+          &:focus {
+            color: @c-blue;
+          }
+
+          &::before {
+            content: '—';
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+
+        &.active {
+          & > a {
+            color: @c-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-offcanvas-user {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.main-offcanvas-user-login {
+  display: block;
+  color: @c-blue;
+  text-align: center;
+  border: 1px solid @c-blue;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+.main-offcanvas-user-link {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+}

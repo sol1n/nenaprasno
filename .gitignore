@@ -1,0 +1,11 @@
+**/node_modules
+.php_cs.cache
+.env
+.idea
+.vagrant
+mysql-password.txt
+**/.section.php
+**/.access.php
+**/.DS_Store
+**/*.log
+**/*.htaccess

@@ -1,0 +1,266 @@
+.main-header {
+  padding-top: 15px;
+  background-color: #fff;
+  z-index: 1;
+
+  & > .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @media all and (max-width: 1080px) {
+      justify-content: space-between;
+    }
+  }
+
+  @media all and (max-width: 1080px) {
+    position: fixed;
+    z-index: 990;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    border-bottom: 2px solid @c-blue;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.16);
+    padding: 8px 0;
+  }
+}
+
+
+.main-header-toggler {
+  display: none;
+  margin-right: 5px;
+
+  @media all and (max-width: 1080px) {
+    display: block;
+  }
+}
+
+.main-header-right {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: auto;
+
+  @media all and (max-width: 1080px) {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+.main-header-contacts {
+  margin-left: 80px;
+
+  @media all and (max-width: 1080px) {
+    display: none;
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+.main-header-contacts-phone {
+  display: block;
+  color: rgba(102, 102, 102, 0.9);;
+  font-size: 14px;
+  margin-bottom: 8px;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.main-header-contacts-email {
+  display: block;
+  color: rgba(102, 102, 102, 0.9);;
+  font-size: 14px;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.wrapper-nav {
+  max-width: 1170px;
+  margin: 0 auto;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.main-header-buttons {
+  .social-buttons {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+
+  @media all and (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.main-header-button-login {
+  display: inline-block;
+  margin-right: 20px;
+  color: @c-blue;
+
+  a {
+    text-decoration: none;
+    margin-right: 6px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      vertical-align: middle;
+      background: #d8d8d8;
+      margin-left: 8px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  @media all and (max-width: 1080px) {
+    font-size: 13px;
+    margin-right: 0;
+  }
+
+  @media all and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.main-header-logo {
+  @media all and (max-width: 1080px) {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+
+    img {
+      width: 130px;
+      height: auto;
+    }
+  }
+}
+
+.main-header-nav {
+  margin-top: 15px;
+  background-color: @c-blue;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.16);
+
+  & > .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media all and (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.main-header-nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.main-header-nav-list {
+  font-size: 0;
+  .ul-reset;
+
+  & > li {
+    .ff-system;
+    font-size: 14px;
+    display: inline-block;
+
+    & > a {
+      display: block;
+      color: #fff;
+      padding: 13px 15px;
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background-color 200ms;
+
+      &:hover {
+        background-color: @c-blue-2;
+        transition: background-color 200ms;
+      }
+    }
+
+    &.active {
+      & > a {
+        background-color: @c-blue-2;
+      }
+    }
+  }
+}
+
+.main-header-nav-button {
+  display: inline-block;
+  margin-left: 8px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+  padding: 5px 12px 8px;
+  transition: all 200ms;
+
+  svg {
+    position: relative;
+    top: 1px;
+    margin-right: 4px;
+    vertical-align: baseline;
+
+    * {
+      transition: all 200ms;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &.active {
+    background-color: rgba(255, 255, 255, 1);
+    color: #47abec;
+    transition: all 200ms;
+
+    svg {
+      * {
+        transition: all 200ms;
+        fill: #47abec;
+      }
+    }
+  }
+}
+
+.main-header-button-donate {
+  border-radius: 2px;
+  background-color: @c-red;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 15px 8px;
+  transition: all 200ms;
+
+  &:hover,
+  &:active {
+    color: #fff;
+    background-color: lighten(@c-red, 5%);
+    transition: all 200ms;
+  }
+}

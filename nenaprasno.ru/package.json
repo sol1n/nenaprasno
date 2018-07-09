@@ -1,0 +1,35 @@
+{
+  "name": "nenaprasno.ru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/gulp/bin/gulp.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fancyapps/fancybox": "^3.3.5",
+    "animate.css": "^3.6.1",
+    "bxslider": "^4.2.13",
+    "flatpickr": "^4.4.4",
+    "flexboxgrid": "^6.3.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-less": "^3.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "jquery": "^3.3.1",
+    "jquery-mask-plugin": "^1.14.15",
+    "normalize.css": "^7.0.0",
+    "tippy.js": "^1.4.2"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1",
+    "spin.js": "^2.3.2"
+  }
+}
