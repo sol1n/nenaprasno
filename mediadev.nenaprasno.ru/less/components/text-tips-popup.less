@@ -1,0 +1,47 @@
+.tip:hover {
+    background: #FAE1BB;
+}
+.tip {
+    cursor: pointer;
+    display: table-cell;
+    padding: 0 4px 0 4px;
+    background: #E2E2E2;
+}
+.tip-block{
+    display: inline-table;
+}
+.tip-popup {
+    display: none;
+    right: 415px;
+    z-index: 1;
+    position: absolute;
+    width: 270px;
+    padding: 20px;
+    background: #FAE1BB;
+    border: 1px solid #F2B355;
+    box-sizing: border-box;
+}
+.tip-popup .title{
+    display: inline-block;
+    width: 230px;
+    height: 18px;
+    padding-bottom: 20px;
+    line-height: normal;
+}
+.tip-popup .text{
+    display: inline-block;
+    width: 230px;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.tip-popup .cross{
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 24px;
+    height: 24px;
+    background-image: url(/assets/images/tip-popup-cross.svg);
+    background-size: cover;
+}

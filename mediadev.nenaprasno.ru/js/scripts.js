@@ -5,6 +5,7 @@ $('.article-block a').each(function () {
 $(document).ready(function () {
     $('[data-toggle]').toggler();
     $('[data-scroll-to-top]').scrollToTop();
+    $('.tip-block').textTips();
 
     $(document).on('click', '.articles-block-loadmore', function () {
         var row_count = $('.row').length;
