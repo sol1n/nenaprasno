@@ -35,3 +35,13 @@
   top: 5px;
   position: relative;
 }
+
+.tip:hover {
+    background: #FAE1BB;
+}
+.tip {
+    display: inline;//NEW
+    cursor: pointer;
+    padding: 4px;
+    background: #E2E2E2;
+}

@@ -15584,27 +15584,63 @@ $("a[href^='#donate-block-sberbank']").on('click', function(){
 (function( $ ) {
     $.fn.textTips = function() {
 
+        popup = $('.tip-popup');//тултип
+        var w =  $(window).width();//определяем ширину экрана
+        mobile = false;
+        if(w<'768'){
+            mobile = true;
+        }
+
         this.click(function () {
-            if(!$(this).find('.tip-popup').is(":visible")){
-                $(this).find('.tip-popup').animate({left: "+=0px",width: 'show', opacity: 'show'}, 400);
+            //если тултип выбранного элемента не отображается показываем
+            if( ($(this).data('tip')!='') && ($(this).data('tip') !== popup.find('.text').html() )  ) {
+                var title = '';//получаем заголовок тултипа
+                if( $(this).attr('title') ) {
+                    title = $(this).attr('title');
+                } else {
+                    title = $(this).html();
+                }
+                //получаем заголовок тултипа
+                title = title.charAt(0).toUpperCase() + title.substr(1);
+                var text = $(this).data('tip');//получаем текст тултипа
+
+                var off_top = $(this).offset().top;//получаем позицию элемента(по вертикали)
+                popup.show();
+                popup.offset({top:off_top});//переносим тултип на один уровень с элементом(по вертикали)
+                popup.hide();
+
+                if (mobile) {
+                    $('.tip-bg').show();//показываем подложку тултипа в мобильной версии
+                }
+                popup.animate({left: "+=0px", width: 'show', opacity: 'show'}, 300);//показываем тултип
+                popup.find('.title').html(title);//задаем заголовок тултипа
+                popup.find('.text').html(text);//задаем текст тултипа
             }
             return false;
         });
 
         $('.cross').click(function () {
-            var popup = $(this).parent();
-            if(popup.is(":visible")){
-                popup.animate({width: 'hide', opacity: 'hide'}, 300);
+            popup.find('.title').html('');//очищаем соодержимое
+            popup.find('.text').html('');
+            popup.animate({width: 'hide', opacity: 'hide'}, 300);//скрываем тултип
+            if (mobile) {//скрываем затенение экрана
+                $('.tip-bg').hide();
             }
             return false;
         });
 
         $(document).mouseup(function (e){
-            var all_popups = $('.tip-popup');
-            if (!all_popups.is(e.target) && all_popups.has(e.target).length === 0) {
-                all_popups.animate({width: 'hide', opacity: 'hide'}, 300);
+            if( $(e.target).data('tip') !== popup.find('.text').html() ) {
+                if (!popup.is(e.target) && popup.has(e.target).length === 0) {
+                        popup.find('.title').html('');//очищаем соодержимое
+                        popup.find('.text').html('');
+                        popup.animate({width: 'hide', opacity: 'hide'}, 300);//скрываем тултип
+                        if (mobile) {//скрываем затенение экрана
+                            $('.tip-bg').hide();
+                        }
+                }
+                return false;
             }
-            return false;
         });
 
     }
@@ -15651,7 +15687,7 @@ $('.article-block a').each(function () {
 $(document).ready(function () {
     $('[data-toggle]').toggler();
     $('[data-scroll-to-top]').scrollToTop();
-    $('.tip-block').textTips();
+    $('.tip').textTips();
 
     $(document).on('click', '.articles-block-loadmore', function () {
         var row_count = $('.row').length;

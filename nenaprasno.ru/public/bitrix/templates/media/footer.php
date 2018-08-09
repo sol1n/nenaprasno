@@ -5,7 +5,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     </main>
 
     <a href="#" class="scroll-to-top" data-scroll-to-top>Наверх</a>
-
+	<div class="tip-bg"></div>
     <footer class="main-footer">
         <div class="wrapper">
             <a href="http://nenaprasno.ru/" target="_blank" class="main-footer-logo">
