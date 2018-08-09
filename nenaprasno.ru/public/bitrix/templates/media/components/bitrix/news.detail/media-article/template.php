@@ -1,3 +1,8 @@
+<div class="tip-popup">
+	<div class="cross"></div>
+	<div class="title"></div>
+	<div class="text"></div>
+</div>
 <article class="article-block article-block-wrapper">
 	<?if($arResult['PROPERTIES']['TYPE']['VALUE'] == 'Тип 2'):?>
 		<!-- второй вариант детальной страницы-->

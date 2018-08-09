@@ -3,7 +3,7 @@ return array (
 "blockquote" => array(
         "tag" => 'blockquote', /*в какой тег будет помещен текст в данном стиле*/
         "title" => "Стиль цитаты", /*название стиля*/
-        "html" => '<blockquote>Цитата</blockquote>'),  /*оформление текста с помощью html*/
+        "html" => '<blockquote>Цитата</blockquote>'),  /*оформление текста для отображения в редакторе*/
 "article-block-highlight" => array(
         "tag" => 'div',
         "title" => "Стиль выделения текста",
@@ -11,6 +11,10 @@ return array (
 "pic-caption" => array(
         "tag" => 'p',
         "title" => "Стиль подписи к изображениям",
-        "html" => '<p class="pic-caption">Подпись к изображению</p>')
+        "html" => '<p class="pic-caption">Подпись к изображению</p>'),
+"tip" => array(
+        "tag" => 'span',
+        "title" => "Пояснение к тексту",
+        "html" => '<span class="tip">Пояснение к тексту</span>')
 );
 ?>
