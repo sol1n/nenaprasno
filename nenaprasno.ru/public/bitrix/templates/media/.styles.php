@@ -11,10 +11,6 @@ return array (
 "pic-caption" => array(
         "tag" => 'p',
         "title" => "Стиль подписи к изображениям",
-        "html" => '<p class="pic-caption">Подпись к изображению</p>'),
-"tip" => array(
-        "tag" => 'span',
-        "title" => "Пояснение к тексту",
-        "html" => '<span class="tip">Пояснение к тексту</span>')
+        "html" => '<p class="pic-caption">Подпись к изображению</p>')
 );
 ?>
