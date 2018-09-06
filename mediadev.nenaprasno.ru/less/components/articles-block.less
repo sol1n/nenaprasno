@@ -39,8 +39,9 @@
   }
 
   @media (min-width: 48em) {
-    height: 100%;
-    //max-height: 390px;
+    //max-height: 230px;
+    //height: 100%;
+    max-height: 440px;
   }
 }
 
@@ -53,7 +54,7 @@
     content: '';
     position: absolute;
     width: 100%;
-    height: 246px;//100%
+    height: 100%;
     left: 0;
     top: 0;
     opacity: 0;
@@ -91,17 +92,19 @@
 
   @media (min-width: 48em) {
     padding: 15px 15px 20px 15px;
+    max-height: 145px;
   }
 }
 
 .articles-block-item-title {
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 5px;
 
   @media (min-width: 48em) {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 22px;
+    min-height: 110px;
+    max-height: 110px;
   }
 }
 
@@ -109,12 +112,13 @@
   font-size: 14px;
 
   @media (min-width: 48em) {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 
 .articles-block-item-featured {
   .articles-block-item-bg {
+    height: 100%;
     img {
       max-height: unset;
       min-height: unset;
@@ -126,6 +130,7 @@
 
     @media (min-width: 48em) {
       font-size: 44px;
+      line-height: 1.15;
     }
   }
 
@@ -138,6 +143,8 @@
   }
 
   .articles-block-item-overlay {
+    position: relative;
+    max-height: none;
     @media (min-width: 48em) {
       padding: 60px 100px;
     }
@@ -226,4 +233,58 @@
 
 .title-c-black{
 	color: @c-black;
+}
+
+.partners-title{
+    bottom: 48px;
+    .articles-block-item-title{
+        min-height: 66px;
+        max-height: 66px;
+    }
+}
+
+.article-block-item-partner{
+    display: flex;
+    border-top: 1px solid #D8D8D8;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    @media (min-width: 48em) {
+		height: 48px;
+	}
+}
+
+.partners-col{
+    width: 33.333%;
+    display: inline-block;
+}
+
+.article-partner-logo{
+    width: 100%;
+    padding-top: 8px;
+    display: inline-block;
+    text-align: center;
+}
+
+.article-partner-title{
+    color: @c-orange;
+    @media (min-width: 48em) {
+        padding: 12px 15px;
+        font-weight: bold;
+        text-align: left;
+        line-height: 12px;
+        font-size: 11px;
+        letter-spacing: 0.066px;
+    }
+}
+
+.partners-link-icon{
+    width: 100%;
+    padding: 15px 16px;
+    text-align: right;
+    display: inline-block;
 }

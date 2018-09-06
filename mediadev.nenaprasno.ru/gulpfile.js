@@ -32,6 +32,7 @@ var jsFiles = [
         './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
         './node_modules/inputmask/dist/jquery.inputmask.bundle.js',
         './js/components/**/*.js',
+        './node_modules/jquery.dotdotdot/src/jquery.dotdotdot.js',
         './js/scripts.js'
     ],
     jsDest = './public/assets/build';

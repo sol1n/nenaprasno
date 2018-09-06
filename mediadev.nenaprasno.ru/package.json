@@ -28,5 +28,7 @@
     "normalize.css": "^7.0.0",
     "tippy.js": "^1.4.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery.dotdotdot": "^3.2.2"
+  }
 }
