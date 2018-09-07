@@ -120,6 +120,16 @@
 
 	<?
 	CModule::IncludeModule('iblock');
+
+	//получаем список всех партнеров
+	$arSelect = Array("ID", "IBLOCK_ID", "NAME", "PREVIEW_PICTURE", "PREVIEW_TEXT");
+	$arFilter = Array("IBLOCK_ID"=>MEDIA_PARTNERS_IBLOCK, "ACTIVE"=>"Y");
+	$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
+	while($ob = $res->GetNextElement()){
+		$arFields = $ob->GetFields();
+		$arResult['PARTNERS'][$arFields["ID"]]["FIELDS"] = $arFields;
+	}
+
 	$arSelect = Array("ID", "IBLOCK_ID", "NAME", "DETAIL_PAGE_URL", "PREVIEW_PICTURE", "IBLOCK_SECTION_ID", "PROPERTY_*");
 	$arFilter = Array("IBLOCK_ID"=>MEDIA_ARTICLES_IBLOCK, "ACTIVE"=>"Y", "SECTION_ID" => $arResult["IBLOCK_SECTION_ID"]);
 	$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
@@ -142,14 +152,20 @@
 			<?$i = 0;?>
 			<? foreach ($arSectionElements as $key => $section_element): ?>
 				<?if($i>$arResult["SAME_SEC_CNT"]-1) break;?>
-				<div class="col-xs-6 col-md-4">
+				<div class="col-xs-12 col-md-4">
 				<?$img = CFile::GetFileArray($section_element["FIELDS"]["PREVIEW_PICTURE"]);?>
 					<article class="articles-block-item">
 						<a href="<?=$section_element["FIELDS"]["DETAIL_PAGE_URL"];?>" class="articles-block-item-link">
 							<div class="articles-block-item-bg">
 								<img src="<?=$img["SRC"];?>" alt="">
 							</div>
-							<div class="articles-block-item-overlay">
+							<?
+							$partners_material = '';
+							if (!empty($section_element['PROPERTIES']['PARTNER']['VALUE'])){
+								$partners_material = 'partners-title';
+							}
+							?>
+							<div class="articles-block-item-overlay <?=$partners_material;?>">
 								<?
 								$color1 = 'title-c-black';
 								if($section_element['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
@@ -159,11 +175,39 @@
 								<div class="articles-block-item-title <?=$color1;?>">
 									<?=$section_element["FIELDS"]["NAME"];?>
 								</div>
-								<div class="articles-block-item-subtitle <?=$color1;?>">
+								<?/*<div class="articles-block-item-subtitle <?=$color1;?>">
 									<?=$section_element["PROPERTIES"]["SUBTITLE"]["VALUE"];?>
-								</div>
+								</div>*/?>
 							</div>
 						</a>
+						<? if (!empty($section_element['PROPERTIES']['PARTNER']['VALUE'])): ?>
+							<div class="article-block-item-partner">
+								<div class="partners-col">
+									<div class="article-partner-title">
+										Партнерский материал
+									</div>
+								</div>
+								<div class="partners-col">
+									<? $partner_link = $arResult['PARTNERS'][$section_element['PROPERTIES']['PARTNER']['VALUE']]['FIELDS']['PREVIEW_TEXT'];?>
+									<? if (!empty($partner_link)): ?>
+										<? $partner_link = 'href="'.$partner_link.'"'; ?>
+									<? else: ?>
+										<? $partner_link = ""; ?>
+									<? endif; ?>
+									<a class="article-partner-logo" <?=$partner_link;?> target="_blank">
+										<? $partner_img = CFile::ResizeImageGet($arResult['PARTNERS'][$section_element['PROPERTIES']['PARTNER']['VALUE']]['FIELDS']['PREVIEW_PICTURE'], array('width'=>80, 'height'=>32), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
+										<img src="<?=$partner_img['src']?>" alt="<?=$arResult['PARTNERS'][$section_element['PROPERTIES']['PARTNER']['VALUE']]['FIELDS']['NAME']?>">
+									</a>
+								</div>
+								<div class="partners-col">
+									<? if (!empty($partner_link)): ?>
+										<a <?=$partner_link;?> target="_blank" class="partners-link-icon">
+											<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/partners-link.svg"); ?>
+										</a>
+									<? endif; ?>
+								</div>
+							</div>
+						<? endif; ?>
 					</article>
 				</div>
 				<? if (($i + 1) % 3 == 0 && $i != $same_sec_cnt - 1): ?>
@@ -213,14 +257,20 @@
 				?>
 				<? foreach ($arNewElements as $key => $new_element): ?>
 					<?if($i>$arResult["NEW_CNT"]-1) break;?>
-					<div class="col-xs-6 col-md-4">
+					<div class="col-xs-12 col-md-4">
 					<?$img = CFile::GetFileArray($new_element["FIELDS"]["PREVIEW_PICTURE"]);?>
 						<article class="articles-block-item">
 							<a href="<?=$new_element["FIELDS"]["DETAIL_PAGE_URL"];?>" class="articles-block-item-link">
 								<div class="articles-block-item-bg">
 									<img src="<?=$img["SRC"];?>" alt="">
 								</div>
-								<div class="articles-block-item-overlay">
+								<?
+								$partners_material = '';
+								if (!empty($new_element['PROPERTIES']['PARTNER']['VALUE'])){
+									$partners_material = 'partners-title';
+								}
+								?>
+								<div class="articles-block-item-overlay <?=$partners_material;?>">
 									<?
 									$color2 = 'title-c-black';
 									if($new_element['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
@@ -230,11 +280,39 @@
 									<div class="articles-block-item-title <?=$color2;?>">
 										<?=$new_element["FIELDS"]["NAME"];?>
 									</div>
-									<div class="articles-block-item-subtitle <?=$color2;?>">
+									<?/*<div class="articles-block-item-subtitle <?=$color2;?>">
 										<?=$new_element["PROPERTIES"]["SUBTITLE"]["VALUE"];?>
-									</div>
+									</div>*/?>
 								</div>
 							</a>
+							<? if (!empty($new_element['PROPERTIES']['PARTNER']['VALUE'])): ?>
+								<div class="article-block-item-partner">
+									<div class="partners-col">
+										<div class="article-partner-title">
+											Партнерский материал
+										</div>
+									</div>
+									<div class="partners-col">
+										<? $partner_link = $arResult['PARTNERS'][$new_element['PROPERTIES']['PARTNER']['VALUE']]['FIELDS']['PREVIEW_TEXT'];?>
+										<? if (!empty($partner_link)): ?>
+											<? $partner_link = 'href="'.$partner_link.'"'; ?>
+										<? else: ?>
+											<? $partner_link = ""; ?>
+										<? endif; ?>
+										<a class="article-partner-logo" <?=$partner_link;?> target="_blank">
+											<? $partner_img = CFile::ResizeImageGet($arResult['PARTNERS'][$new_element['PROPERTIES']['PARTNER']['VALUE']]['FIELDS']['PREVIEW_PICTURE'], array('width'=>80, 'height'=>32), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
+											<img src="<?=$partner_img['src']?>" alt="<?=$arResult['PARTNERS'][$new_element['PROPERTIES']['PARTNER']['VALUE']]['FIELDS']['NAME']?>">
+										</a>
+									</div>
+									<div class="partners-col">
+										<? if (!empty($partner_link)): ?>
+											<a <?=$partner_link;?> target="_blank" class="partners-link-icon">
+												<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/partners-link.svg"); ?>
+											</a>
+										<? endif; ?>
+									</div>
+								</div>
+							<? endif; ?>
 						</article>
 					</div>
 					<? if (($i + 1) % 3 == 0 && $i != $new_cnt - 1): ?>

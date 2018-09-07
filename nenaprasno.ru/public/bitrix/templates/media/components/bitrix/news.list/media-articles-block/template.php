@@ -20,9 +20,9 @@ $this->setFrameMode(true);
 						<div class="articles-block-item-title <?=$color1;?>">
 							<?=$on_main_element['FIELDS']['NAME'];?>
 						</div>
-						<div class="articles-block-item-subtitle <?=$color1;?>">
+						<?/* <div class="articles-block-item-subtitle <?=$color1;?>">
 							<?=$on_main_element['PROPERTIES']['SUBTITLE']['VALUE'];?>
-						</div>
+						</div> */?>
 					</div>
 				</a>
 			</article>

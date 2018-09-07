@@ -10,9 +10,7 @@
 
 .articles-block-item {
   position: relative;
-  //width: 100%;
   margin-bottom: 0.5rem;
-  //LOL min-height: 339px;
   max-height: 339px;
   background-color: @c-white;
   margin-left: -15px;
@@ -47,19 +45,14 @@
   }
 
   @media (min-width: 48em) {
-    //max-height: 230px;
-    //height: 100%;
     max-height: 440px;
   }
 }
 
 .articles-block-item-bg {
   position: relative;
-  // margin-left: -15px;
-  // margin-right: -15px;
   width: 100%;
   height: 212px;
-
 
   &::after {
     content: '';
@@ -77,14 +70,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // max-height: 212px;
-    // min-height: 212px;
-
-    @media (min-width: 48em) {
-      // max-height: 246px;
-      // min-height: 246px;
-      height: 100%;
-    }
   }
 
   @media (min-width: 48em) {
@@ -97,7 +82,6 @@
 }
 
 .articles-block-item-overlay {
-  //LOL position: absolute;
   z-index: 10;
   bottom: 0;
   left: 0;
@@ -107,7 +91,6 @@
   @media (min-width: 48em) {
     position: absolute;
     padding: 17px 15px;
-    // max-height: 145px;//?????????????
   }
 }
 
@@ -116,8 +99,6 @@
   font-weight: bold;
   line-height: 18px;
   max-height: 101px;
-  //LOL min-height: 101px;
-  //LOL max-height: 101px;
 
   @media (min-width: 48em) {
     font-size: 18px;
@@ -190,7 +171,6 @@
     color: #fff;
   }
 
-
   .articles-block-item-link {
     @media (min-width: 48em) {
       color: #fff;
@@ -226,7 +206,6 @@
 }
 
 .directory-link {
-
   display: block;
   width: 100%;
   background-color: @c-orange;
@@ -263,18 +242,13 @@
 }
 
 .partners-title{
-    // height: 54px;
-    // min-height: 54px;
-    // max-height: 54px;
     bottom: 48px;
     @media (min-width: 48em) {
         bottom: 0;
     }
     .articles-block-item-title{
-        //min-height: 54px;
         max-height: 54px;
         @media (min-width: 48em) {
-            //min-height: 66px;
             max-height: 66px;
         }
     }
@@ -284,7 +258,6 @@
     height: 48px;
     display: flex;
     border-top: 1px solid #D8D8D8;
-    //LOL position: absolute;
     z-index: 10;
     bottom: 0;
     left: 0;
@@ -312,11 +285,9 @@
     line-height: 12px;
     font-size: 11px;
     padding: 12px 15px;
+    text-align: left;
     @media (min-width: 48em) {
-        //padding: 15px!important;
         font-weight: bold;
-        text-align: left;
-        letter-spacing: 0.066px;
     }
 }
 
