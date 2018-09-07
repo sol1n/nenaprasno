@@ -36,7 +36,7 @@ $this->setFrameMode(true);
     <? if ($length): ?>
         <div class="row n1">
         <? foreach ($arResult['ITEMS'] as $k => $item): ?>
-            <div class="col-xs-6 col-md-4">
+            <div class="col-xs-12 col-md-4">
                 <article class="articles-block-item">
                     <a href="<?=$item["DETAIL_PAGE_URL"];?>" class="articles-block-item-link">
                         <div class="articles-block-item-bg">

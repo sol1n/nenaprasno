@@ -125,4 +125,4 @@ if(!$meta_image)
     </nav>
 </div>
 
-<main class="main-content m-t-lg m-b-lg">
+<main class="main-content">
