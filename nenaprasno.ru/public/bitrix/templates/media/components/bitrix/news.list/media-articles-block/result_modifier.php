@@ -9,4 +9,13 @@
 		$arResult['ON_MAIN'][$arFields["ID"]]["FIELDS"] = $arFields;
 		$arResult['ON_MAIN'][$arFields["ID"]]["PROPERTIES"] = $arProps;
 	}
+
+	//получаем список всех партнеров
+	$arSelect = Array("ID", "IBLOCK_ID", "NAME", "PREVIEW_PICTURE", "PREVIEW_TEXT");
+	$arFilter = Array("IBLOCK_ID"=>MEDIA_PARTNERS_IBLOCK, "ACTIVE"=>"Y");
+	$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
+	while($ob = $res->GetNextElement()){
+		$arFields = $ob->GetFields();
+		$arResult['PARTNERS'][$arFields["ID"]]["FIELDS"] = $arFields;
+	}
 ?>

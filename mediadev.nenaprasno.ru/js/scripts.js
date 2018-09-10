@@ -3,12 +3,15 @@ $('.article-block a').each(function () {
 });
 
 $(document).ready(function () {
+    $('.articles-block-item-title').dotdotdot({//обрезка заголовков статей внутри плиток
+        height: "watch",
+    });
     $('[data-toggle]').toggler();
     $('[data-scroll-to-top]').scrollToTop();
     $('.tip').textTips();
 
     $(document).on('click', '.articles-block-loadmore', function () {
-        var row_count = $('.row').length;
+        var row_count = $('.articles-block > .row').length;
         $('.n' + row_count).after('<div class="row n' + (row_count + 1) + '"></div>');
 
         // Контейнер, в котором хранятся элементы
@@ -31,6 +34,9 @@ $(document).ready(function () {
 
                     targetContainer.append(elements); // Добавляем посты в конец контейнера
                     targetContainer.after(pagination); // добавляем навигацию следом
+                    $('.articles-block-item-title').dotdotdot({//обрезка заголовков статей внутри плиток
+                        height: "watch",
+                    });
                 }
             })
         }

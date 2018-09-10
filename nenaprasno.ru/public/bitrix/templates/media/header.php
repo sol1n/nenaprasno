@@ -20,7 +20,7 @@ if(!$meta_image)
 	<meta property="og:image" content="<?$APPLICATION->ShowProperty("image");?>">
 	<meta property="og:image:url" content="<?$APPLICATION->ShowProperty("image");?>">
 </head>
-<body class="header-fixed">
+<body class="header-fixed b-light-grey">
 
 <? if ($USER->IsAdmin()): ?>
 	<? $APPLICATION->ShowPanel(); ?>
@@ -125,4 +125,4 @@ if(!$meta_image)
     </nav>
 </div>
 
-<main class="main-content m-t-lg m-b-lg">
+<main class="main-content">
