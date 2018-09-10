@@ -50,13 +50,7 @@ $this->setFrameMode(true);
 						}
 						?>
                         <div class="articles-block-item-overlay <?=$partners_material;?>">
-							<?
-							$color2 = 'title-c-black';
-							if($item['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-								$color2 = 'title-c-white';
-							}
-							?>
-                            <div class="articles-block-item-title <?=$color2;?>" >
+                            <div class="articles-block-item-title" >
                                 <?=$item['NAME']?>
                             </div>
                         </div>

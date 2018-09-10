@@ -19,18 +19,9 @@
 						}
 						?>
 						<div class="articles-block-item-overlay <?=$partners_material;?>">
-							<?
-							$color = 'title-c-black';
-							if($item['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-								$color = 'title-c-white';
-							}
-							?>
-							<div class="articles-block-item-title <?=$color;?>">
+							<div class="articles-block-item-title">
 								<?=$item['NAME']?>
 							</div>
-							<?/*<div class="articles-block-item-subtitle <?=$color;?>">
-								<?=$item['PROPERTIES']['SUBTITLE']['VALUE']?>
-							</div>*/?>
 						</div>
 					</a>
 					<? if (!empty($item['PROPERTIES']['PARTNER']['VALUE'])): ?>
