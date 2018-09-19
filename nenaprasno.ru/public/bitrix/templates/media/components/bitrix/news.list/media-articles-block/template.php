@@ -42,6 +42,9 @@ $this->setFrameMode(true);
                         <div class="articles-block-item-bg">
 							<? $img = CFile::ResizeImageGet($item['PREVIEW_PICTURE'], array('width'=>369 * 2, 'height'=>230 * 2), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
                             <img src="<?=$img['src']?>" alt="<?=$item['NAME']?>">
+							<? if (!empty($item['PROPERTIES']['ARTICLE_TYPE']['VALUE'])): ?>
+								<div class="articles-block-tag"><?=$arResult['ARTICLE_TYPES'][$item['PROPERTIES']['ARTICLE_TYPE']['VALUE']]?></div>
+							<? endif; ?>
                         </div>
 						<?
 						$partners_material = '';
