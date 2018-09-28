@@ -166,18 +166,9 @@
 							}
 							?>
 							<div class="articles-block-item-overlay <?=$partners_material;?>">
-								<?
-								$color1 = 'title-c-black';
-								if($section_element['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-									$color1 = 'title-c-white';
-								}
-								?>
-								<div class="articles-block-item-title <?=$color1;?>">
+								<div class="articles-block-item-title title-c-black">
 									<?=$section_element["FIELDS"]["NAME"];?>
 								</div>
-								<?/*<div class="articles-block-item-subtitle <?=$color1;?>">
-									<?=$section_element["PROPERTIES"]["SUBTITLE"]["VALUE"];?>
-								</div>*/?>
 							</div>
 						</a>
 						<? if (!empty($section_element['PROPERTIES']['PARTNER']['VALUE'])): ?>
@@ -271,18 +262,9 @@
 								}
 								?>
 								<div class="articles-block-item-overlay <?=$partners_material;?>">
-									<?
-									$color2 = 'title-c-black';
-									if($new_element['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-										$color2 = 'title-c-white';
-									}
-									?>
-									<div class="articles-block-item-title <?=$color2;?>">
+									<div class="articles-block-item-title title-c-black">
 										<?=$new_element["FIELDS"]["NAME"];?>
 									</div>
-									<?/*<div class="articles-block-item-subtitle <?=$color2;?>">
-										<?=$new_element["PROPERTIES"]["SUBTITLE"]["VALUE"];?>
-									</div>*/?>
 								</div>
 							</a>
 							<? if (!empty($new_element['PROPERTIES']['PARTNER']['VALUE'])): ?>
