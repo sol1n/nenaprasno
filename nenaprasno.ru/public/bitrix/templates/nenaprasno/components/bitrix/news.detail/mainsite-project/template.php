@@ -23,7 +23,7 @@
                   <a href="#donate" class="button button-blue button-round">Помочь проекту</a>
                 <? endif ?>
                 <? if ($arResult['CODE'] == 'vsho'): ?>
-                  <a href="/projects/vsho/students/" class="button button-round">Список студентов</a>
+                  <a href="/projects/vsho/students/" class="button button-round">Список резидентов</a>
                 <? endif ?>
       				</div>
       			<?endif;?>

@@ -1,7 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Главная');
-?> 
+?>
 
 <main class="main-content">
     <div class="wrapper">
@@ -16,12 +16,12 @@ $APPLICATION->SetTitle('Главная');
             <li>
               <a href="/projects/vsho/">Высшая школа онкологии</a>
             </li>
-            <li class="active">Студенты</li>
+            <li class="active">Резиденты</li>
           </ul>
         </div>
 
         <div class="page-title">
-            Студенты Высшей школы онкологии
+            Резиденты Высшей школы онкологии
         </div>
 
         <div class="main-wrapper">
