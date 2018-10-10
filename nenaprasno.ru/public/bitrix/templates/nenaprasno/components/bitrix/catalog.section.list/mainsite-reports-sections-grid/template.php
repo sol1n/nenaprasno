@@ -9,11 +9,11 @@
                 </div>
                 <?
                     $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"mainsite-reports-block", 
+	"bitrix:news.list",
+	"mainsite-reports-block",
 	array(
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-		"NEWS_COUNT" => "12",
+		"NEWS_COUNT" => "",
 		"SORT_BY1" => "SORT",
 		"SORT_ORDER1" => "ASC",
 		"FIELD_CODE" => array(
