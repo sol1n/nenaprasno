@@ -4,13 +4,13 @@
             <? foreach ($arResult['ITEMS'] as $item): ?>
                 <? if ($item['ID'] != $arParams['SELECTED']): ?>
                     <li>
-                        <a href="/project/vsho/students/<?=$item['ID']?>/">
+                        <a href="/projects/vsho/students/<?=$arParams['PARENT_SECTION_CODE']?>/<?=$item['ID']?>/">
                             <?=$item['NAME']?>
                         </a>
                     </li>
                 <? else: ?>
                     <li class="active">
-                        <a href="/project/vsho/students/<?=$item['ID']?>/" class="selected">
+                        <a href="/projects/vsho/students/<?=$arParams['PARENT_SECTION_CODE']?>/<?=$item['ID']?>/" class="selected">
                             <?=$item['NAME']?>
                         </a>
                     </li>

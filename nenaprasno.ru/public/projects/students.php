@@ -25,32 +25,28 @@ $APPLICATION->SetTitle('Главная');
         </div>
 
         <div class="main-wrapper">
-            <?
-                $APPLICATION->IncludeComponent("bitrix:news.list", "mainsite-students-list", array(
-                  "IBLOCK_ID" => "20",
-                  "NEWS_COUNT" => "30",
-                  "SORT_BY1" => "SORT",
-                  "SORT_ORDER1" => "ASC",
-                  "FIELD_CODE" => array('DATE_CREATE', 'DATE_ACTIVE_FROM'),
-                  "PROPERTY_CODE" => array("*"),
-                  "SET_TITLE" => "Y",
-                  "SET_STATUS_404" => "N",
-                  "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-                  "ADD_SECTIONS_CHAIN" => "Y",
-                  "PARENT_SECTION" => "",
-                  "PARENT_SECTION_CODE" => $_REQUEST['section'],
-                  "DISPLAY_TOP_PAGER" => "N",
-                  "DISPLAY_BOTTOM_PAGER" => "N",
-                  "PAGER_SHOW_ALWAYS" => "N",
-                  "PAGER_TEMPLATE" => "main",
-                  "CACHE_TYPE" => "A",
-                  "CACHE_TIME" => "360000",
-                  "CACHE_FILTER" => "Y",
-                  "CACHE_GROUPS" => "N",
-                ),
-                false
-              );
-            ?>
+            <div class="main-wrapper-column">
+                <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "mainsite-residents-sections",
+                    Array(
+                            "VIEW_MODE" => "TEXT",
+                            "SHOW_PARENT_NAME" => "N",
+                            "IBLOCK_TYPE" => "mainsite",
+                            "IBLOCK_ID" => "20",
+                            "SECTION_ID" => "",
+                            "SECTION_CODE" => "",
+                            "SECTION_URL" => "",
+                            "COUNT_ELEMENTS" => "Y",
+                            "TOP_DEPTH" => "1",
+                            "SECTION_FIELDS" => "",
+                            "SECTION_USER_FIELDS" => "",
+                            "ADD_SECTIONS_CHAIN" => "N",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "360000",
+                            "CACHE_NOTES" => "",
+                            "CACHE_GROUPS" => "Y",
+                        )
+                    );?>
+            </div>
         </div>
     </div>
 
