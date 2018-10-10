@@ -19,6 +19,9 @@ $APPLICATION->SetTitle('Главная');
             <li>
               <a href="/projects/vsho/students/">Резиденты</a>
             </li>
+            <li>
+              <a href="/projects/vsho/students/<?=$_REQUEST['section']?>/"><?=$_REQUEST['section']?></a>
+            </li>
             <li class="active"><?$APPLICATION->ShowTitle(false)?></li>
           </ul>
         </div>
@@ -60,44 +63,43 @@ $APPLICATION->SetTitle('Главная');
 
             <div class="main-wrapper-column m-b-lg">
                 <?
-                      $APPLICATION->IncludeComponent("bitrix:news.detail", "mainsite-employees", Array(
-                              "USE_SHARE" => "N",
-                              "AJAX_MODE" => "N",
-                              "IBLOCK_TYPE" => "hso",
-                              "IBLOCK_ID" => "20",
-                              "ELEMENT_ID" => $_REQUEST['id'],
-                              "ELEMENT_CODE" => "",
-                              "CHECK_DATES" => "Y",
-                              "FIELD_CODE" => Array("ID", "PREVIEW_PICTURE", "PREVIEW_TEXT", "DATE_CREATE"),
-                              "PROPERTY_CODE" => Array("*"),
-                              "SET_TITLE" => "Y",
-                              "SET_CANONICAL_URL" => "Y",
-                              "SET_BROWSER_TITLE" => "Y",
-                              "BROWSER_TITLE" => "NAME",
-                              "SET_META_KEYWORDS" => "Y",
-                              "META_KEYWORDS" => "-",
-                              "SET_META_DESCRIPTION" => "Y",
-                              "META_DESCRIPTION" => "-",
-                              "SET_STATUS_404" => "Y",
-                              "SET_LAST_MODIFIED" => "Y",
-                              "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-                              "ADD_SECTIONS_CHAIN" => "Y",
-                              "ADD_ELEMENT_CHAIN" => "Y",
-                              "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                              "USE_PERMISSIONS" => "N",
-                              "GROUP_PERMISSIONS" => Array(),
-                              "CACHE_TYPE" => "A",
-                              "CACHE_TIME" => "3600",
-                              "CACHE_GROUPS" => "Y",
-                              "DISPLAY_TOP_PAGER" => "N",
-                              "DISPLAY_BOTTOM_PAGER" => "N",
-                              "SET_STATUS_404" => "Y",
-                              "SHOW_404" => "Y",
-                          ),
-                      false
-                      );
-                    ?>
-
+                  $APPLICATION->IncludeComponent("bitrix:news.detail", "mainsite-employees", Array(
+                          "USE_SHARE" => "N",
+                          "AJAX_MODE" => "N",
+                          "IBLOCK_TYPE" => "hso",
+                          "IBLOCK_ID" => "20",
+                          "ELEMENT_ID" => $_REQUEST['id'],
+                          "ELEMENT_CODE" => "",
+                          "CHECK_DATES" => "Y",
+                          "FIELD_CODE" => Array("ID", "PREVIEW_PICTURE", "PREVIEW_TEXT", "DATE_CREATE"),
+                          "PROPERTY_CODE" => Array("*"),
+                          "SET_TITLE" => "Y",
+                          "SET_CANONICAL_URL" => "Y",
+                          "SET_BROWSER_TITLE" => "Y",
+                          "BROWSER_TITLE" => "NAME",
+                          "SET_META_KEYWORDS" => "Y",
+                          "META_KEYWORDS" => "-",
+                          "SET_META_DESCRIPTION" => "Y",
+                          "META_DESCRIPTION" => "-",
+                          "SET_STATUS_404" => "Y",
+                          "SET_LAST_MODIFIED" => "Y",
+                          "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                          "ADD_SECTIONS_CHAIN" => "Y",
+                          "ADD_ELEMENT_CHAIN" => "Y",
+                          "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                          "USE_PERMISSIONS" => "N",
+                          "GROUP_PERMISSIONS" => Array(),
+                          "CACHE_TYPE" => "A",
+                          "CACHE_TIME" => "3600",
+                          "CACHE_GROUPS" => "Y",
+                          "DISPLAY_TOP_PAGER" => "N",
+                          "DISPLAY_BOTTOM_PAGER" => "N",
+                          "SET_STATUS_404" => "Y",
+                          "SHOW_404" => "Y",
+                      ),
+                  false
+                  );
+                ?>
             </div>
         </div>
     </div>
