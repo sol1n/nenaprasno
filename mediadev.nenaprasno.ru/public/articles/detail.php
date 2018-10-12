@@ -46,6 +46,13 @@ $APPLICATION->SetTitle("Profilaktika.Media");
 	?>
 </div>
 
+<?$APPLICATION->IncludeFile(
+  SITE_DIR."include/donations/donate-block.php",
+  Array(),
+  Array("MODE"=>"html", "SHOW_BORDER" => false)
+  );
+?>
+
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>
