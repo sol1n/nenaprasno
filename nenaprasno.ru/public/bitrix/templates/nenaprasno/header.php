@@ -7,6 +7,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<?$APPLICATION->ShowHead();?>
 		<title><?$APPLICATION->ShowTitle();?></title>
 		<link rel="stylesheet" href="/assets/build/style.min.css">
+		<link rel="stylesheet" href="/assets/css/tmp_styles.css">
 		<link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="viewport" content="width=500">
         <link rel="canonical" href="<?=$APPLICATION->GetProperty("canonical", htmlspecialchars($_SERVER['SERVER_NAME']  . $_SERVER['REQUEST_URI']))?>"/>
