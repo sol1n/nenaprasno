@@ -2,6 +2,7 @@
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("RSS");
 ?>
+
 <?$APPLICATION->IncludeComponent("bitrix:rss.out","",Array(
         "IBLOCK_TYPE" => "media",
         "IBLOCK_ID" => MEDIA_ARTICLES_IBLOCK,
@@ -22,6 +23,7 @@ $APPLICATION->SetTitle("RSS");
         "CACHE_FILTER" => "N"
     )
 );?>
+
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>

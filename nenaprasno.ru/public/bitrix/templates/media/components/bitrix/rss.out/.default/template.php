@@ -44,7 +44,6 @@ function get_enclosure($txt){
     return $enclosure;
 }
 ?>
-
 <?='<?xml version="1.0" encoding="'.SITE_CHARSET.'"?>'?>
 <rss version="2.0" xmlns:mailru="http://news.mail.ru/">
     <channel>
@@ -91,4 +90,3 @@ function get_enclosure($txt){
         <? endforeach ?>
     </channel>
 </rss>
-?>
