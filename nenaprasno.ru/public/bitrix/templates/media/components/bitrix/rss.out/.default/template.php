@@ -68,7 +68,7 @@ function get_enclosure($txt){
                     <? endif ?>
                     <title><![CDATA[<?=$arItem["title"]?>]]></title>
                     <description><![CDATA[<?=$description_text?>]]></description>
-                    <link><?=$arItem["link"]?></link>
+                    <link><?=$arItem["ELEMENT"]["DETAIL_PAGE_URL"]?></link>
                     <pubDate><?=$arItem["pubDate"]?></pubDate>
                     <mailru:full-text><![CDATA[<?=$full_text?>]]></mailru:full-text>
                     <? if(is_array($arItem["enclosure"])): ?>
